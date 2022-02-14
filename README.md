@@ -44,13 +44,21 @@ When you create the email go to https://myaccount.google.com/lesssecureapps?pli=
 
 Step 6. Open innomedup_release_v1_1. Before uploading the code to your ESP change the following lines:
 Also before uploading this sketch upload a simple sketch like Blink located in File->examples->01.Basics to make sure you have selected the right version of ESP32. 
+For NOTIFICATION_EMAIL and USER_EMAIL you can use the gmail you created on step 5. Please send an email to innomedupgrc@gmail.com to request an API_KEY and a FIREBASE_PROJECT_ID
 
 #define NOTIFICATION_EMAIL "YourEmail@gmail.com"
+
 #define NOTIFICATION_PASSWORD "yourPassword"
 
 #define USER_EMAIL "YourEmail@gmail.com"
+
 #define USER_PASSWORD "yourPassword"
+
 #define SENDER_NAME "InnomedUP"
+
+#define API_KEY  "askForAPI"
+
+#define FIREBASE_PROJECT_ID "askForProjectID"
 
 Step 7. Upload to your ESP32
 
