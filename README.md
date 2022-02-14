@@ -31,11 +31,16 @@ Step 3. Install the ESP library by following the instructions on
 https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/
 
 Step 4. Install the required libraries
-On Arduino go to Sketch->Include Library->Manage Libraries 
+On Arduino go to Sketch->Include Library->Manage Libraries
+
 Download HX711 Arduino Library by Bogdan Necula, Andreas Motl (0.7.4)
+
 Download Firebase Arduino Client Library for Espressif ESP8266 and ESP32 by Mobizt (2.8.3)
+
 Download ESP Mail Client by Mobizt (1.6.4)
+
 Download ESP8266 and ESP32 OLED driver for SSD1306 displays by ThingPulse,Weinberg (4.2.1)
+
 
 The program has been tested with the versions mentioned above. Please install these versions. 
 
