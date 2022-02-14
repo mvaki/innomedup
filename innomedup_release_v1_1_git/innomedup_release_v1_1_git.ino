@@ -30,7 +30,7 @@ WebServer server(80);
 #define BIN_VERSION 0 //0 NO_PCB, 1 PCB,2 MINI_PCB
 #ifndef LED_BUILTIN
 #define LED_BUILTIN 2 // pin number is specific to your esp32 board
-#endif //maybe its pin2
+#endif 
 
 //For Notification Emails
 
