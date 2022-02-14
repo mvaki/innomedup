@@ -67,7 +67,9 @@ Step 8. Everytime the ESP32 is powered on it should display on the OLED its MAC 
 
 Step 9. If you havent set up the ESP32 it should automatically create a wifi network named INNOMED-UP. The password is upcycle!
 Use a smartphone or a computer to connect to the network, open a browser and type the address 192.168.4.1. The following page should be displayed.
+
 <img src="https://user-images.githubusercontent.com/37118897/153802616-93ade98d-1aa2-4c42-b077-749abd6f4c40.jpg" width="200">
+
 After settiing it up the device will restart. If you want to repeat the setup hold the button connected on pin 26 for 5 seconds.
 This will delete all saved settings including the network SSID and pass. 
 
