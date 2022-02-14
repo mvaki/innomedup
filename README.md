@@ -74,5 +74,6 @@ This will delete all saved settings including the network SSID and pass.
 Step 10. If everything is setup correctly your ESP should upload its data on Firebase.
 It is possible to send a notification email to the manager of the bin.
 To do so please send an email to innomedupgrc@gmail.com with the MAC of the ESP and the recipient email.
+
 ie 84:CC:A8:5C:C7:04 recipientemail@gmail.com.
 
