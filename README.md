@@ -2,13 +2,21 @@
 
 Materials used:
  1x ESP32 Dev Kit 
+ 
  1x HC-SR04P (Be careful to use to version with the P as it is 3.3V compatible) 
+ 
  1x HX711 
+ 
  4x Load Cells 
+ 
  1x OLED 128x32 I2C 
+ 
  1x Battery Holder with battery charger 
+ 
  1x Slide Switch  
+ 
  1x Push Button 
+ 
  Wire 
 
 Step 1. Connect the hardware for the NO_PCB version as in the picture below. 
