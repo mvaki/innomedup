@@ -36,7 +36,7 @@ Download Firebase Arduino Client Library for Espressif ESP8266 and ESP32 by Mobi
 Download ESP Mail Client by Mobizt (1.6.4)
 Download ESP8266 and ESP32 OLED driver for SSD1306 displays by ThingPulse,Weinberg (4.2.1)
 
-The programm has been tested with the versions mentioned above. Please install these versions. 
+The program has been tested with the versions mentioned above. Please install these versions. 
 
 Step 5. Create a gmail account and change security settings so that esp can send emails.
 For Greece the email is innomedupgrc@gmail.com
