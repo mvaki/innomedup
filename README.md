@@ -1,15 +1,15 @@
 # innomedup
 
 Materials used:
-1x ESP32 Dev Kit
-1x HC-SR04P (Be careful to use to version with the P as it is 3.3V compatible)
+1x ESP32 Dev Kit 
+1x HC-SR04P (Be careful to use to version with the P as it is 3.3V compatible) 
 1x HX711 
-4x Load Cells
-1x OLED 128x32 I2C
-1x Battery Holder with battery charger
-1x Slide Switch 
-1x Push Button
-Wire
+4x Load Cells 
+1x OLED 128x32 I2C 
+1x Battery Holder with battery charger 
+1x Slide Switch  
+1x Push Button 
+Wire 
 
 Step 1. Connect the hardware for the NO_PCB version as in the picture below. 
 ![innomedup_nopcb_variant_v0 2](https://user-images.githubusercontent.com/37118897/153802363-54a3113d-c0b0-47d4-bd40-260771c730d4.jpg)
