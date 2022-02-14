@@ -52,8 +52,8 @@ void sendEmail(const String recipient, String message);
 
 #define USER_EMAIL "yourmail@gmail.com" //replace with your email
 #define USER_PASSWORD "yourpassword"
-#define API_KEY  "AIzaSyAXMq_tWlxfNym_GNsE0UoL5mRJUE6HScU"
-#define FIREBASE_PROJECT_ID "testproject-719da"
+#define API_KEY  "AskForAPI"
+#define FIREBASE_PROJECT_ID "AskForProjectID"
 
 
 //Define FirebaseESP32 data object for data sending and receiving
@@ -551,99 +551,6 @@ gpio_num_t to_gpio(int pinNum){
   }
 }
 
-
-// void smtpCallback(SMTP_Status status)
-// {
-//   /* Print the current status */
-//   Serial.println(status.info());
-
-//   /* Print the sending result */
-//   if (status.success())
-//   {
-//     Serial.println("----------------");
-//     ESP_MAIL_PRINTF("Message sent success: %d\n", status.completedCount());
-//     ESP_MAIL_PRINTF("Message sent failled: %d\n", status.failedCount());
-//     Serial.println("----------------\n");
-//     struct tm dt;
-
-//     for (size_t i = 0; i < smtp.sendingResult.size(); i++)
-//     {
-//       /* Get the result item */
-//       SMTP_Result result = smtp.sendingResult.getItem(i);
-//       time_t ts = (time_t)result.timestamp;
-//       localtime_r(&ts, &dt);
-
-//       ESP_MAIL_PRINTF("Message No: %d\n", i + 1);
-//       ESP_MAIL_PRINTF("Status: %s\n", result.completed ? "success" : "failed");
-//       ESP_MAIL_PRINTF("Date/Time: %d/%d/%d %d:%d:%d\n", dt.tm_year + 1900, dt.tm_mon + 1, dt.tm_mday, dt.tm_hour, dt.tm_min, dt.tm_sec);
-//       ESP_MAIL_PRINTF("Recipient: %s\n", result.recipients);
-//       ESP_MAIL_PRINTF("Subject: %s\n", result.subject);
-//     }
-//     Serial.println("----------------\n");
-
-//     //You need to clear sending result as the memory usage will grow up as it keeps the status, timstamp and
-//     //pointer to const char of recipients and subject that user assigned to the SMTP_Message object.
-
-//     //Because of pointer to const char that stores instead of dynamic string, the subject and recipients value can be
-//     //a garbage string (pointer points to undefind location) as SMTP_Message was declared as local variable or the value changed.
-
-//     smtp.sendingResult.clear();
-//   }
-// }
-
-// void sendEmail(const char *recipient, String text){  
-//   //smtp.debug(debug);
-//   //char timeNow[50];
-//   //strftime(timeNow,50, "Date: %a, %d %b %Y %H:%M:%S %z (UTC)\r\n", &timestruct);
-  
-//   smtp.callback(smtpCallback);
-//   ESP_Mail_Session session;
-//   session.server.host_name = SMTP_HOST;
-//   session.server.port = SMTP_PORT;
-//   session.login.email = NOTIFICATION_EMAIL;
-//   session.login.password = NOTIFICATION_PASSWORD;
-//   session.login.user_domain = "";
-
-//   SMTP_Message message;
-//   message.sender.name = SENDER_NAME;
-//   message.sender.email = NOTIFICATION_EMAIL;
-//   message.subject = "Bin Status Changed";
-//   message.addRecipient("", recipient);
-//   //if (debug) Serial.println("Time for email is:"+String(timeNow));
-//   session.time.gmt_offset = 2;
-//   session.time.day_light_offset = 0;
-//   //message.date= timeNow;
-//   //String textMsg = "Your Bin is Full. Please arrange pickup";
-//   String textMsg=text;
-//   message.text.content = textMsg.c_str();
-//   //message.text.charSet = "us-ascii";
-//   //message.text.transfer_encoding = Content_Transfer_Encoding::enc_7bit;
-//   //message.priority = esp_mail_smtp_priority::esp_mail_smtp_priority_low;
-//   message.priority = esp_mail_smtp_priority::esp_mail_smtp_priority_normal;
-//   //const char * messageID=("Message-ID: "+String(NOTIFICATION_EMAIL)).c_str();
-//   //message.addHeader(timeNow);
-  
-//   // if (debug) Serial.println(String(timeNow));
-//   // strftime(timeNow,40, "%a, %d %b %Y %H:%M:%S", &timestruct);
-//   // if(gmtOffset_hr<0){
-//   //   if(gmtOffset_hr<=-10) snprintf(timeNow, 40, "%s -0%i0\r\n", timeNow,gmtOffset_hr);
-//   //   else snprintf(timeNow, 40, "%s -0%i00\r\n", timeNow,gmtOffset_hr);  
-//   // }
-//   // else{
-//   //   if(gmtOffset_hr<=-10) snprintf(timeNow, 40, "%s +0%i0\r\n", timeNow,gmtOffset_hr);
-//   //   else snprintf(timeNow, 40, "%s +0%i00\r\n", timeNow,gmtOffset_hr); 
-//   // }
-  
-//   //session.time=timeNow;
-
-//   if (!smtp.connect(&session))
-//       return;
-
-//   if (!MailClient.sendMail(&smtp, &message))
-//       Serial.println("Error sending Email, " + smtp.errorReason());
-//   ESP_MAIL_PRINTF("Free Heap: %d\n", MailClient.getFreeHeap());
-
-// }
 
 void sendEmail(const char *recipient, String text){ 
   SMTPSession smtp;
