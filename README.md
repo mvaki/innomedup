@@ -48,8 +48,16 @@ Step 5. Create a gmail account and change security settings so that esp can send
 For Greece the email is innomedupgrc@gmail.com
 When you create the email go to https://myaccount.google.com/lesssecureapps?pli=1 and allow less secure apps access 
 
-Step 6. Open innomedup_release_v1_1. Before uploading the code to your ESP change the following lines:
-Also before uploading this sketch upload a simple sketch like Blink located in File->examples->01.Basics to make sure you have selected the right version of ESP32. 
+Step 6. Before uploading any sketch upload a simple sketch like Blink located in File->examples->01.Basics to make sure you have selected the right version of ESP32.
+When you upload Blink you should see an LED light flashing on your ESP32 Board.
+
+Step 7. This includes that you have set up your bin's scale if there is one. You need to calibrate the scale and find the loadCellCalibration and zeroFactor values.
+To do so, make sure the scale is connected to the ESP32. Upload HX711calibration.ino and open the serial monitor on ArduinoIDE (press ctrl+shift+M).
+On the monitor set Serial Speed to 115200. Now put a known weight on the scale that is above 1Kg and use the serial monitor to send + or - until the measured weight is close to the real value.
+When you get really close send / or * to get as close as possible. When you are done send =. Save the values for loadCellCalibration and zeroFactor as you will need them in the next step.
+
+ 
+Step 8. Open innomedup_release_v1_2_git.ino. Before uploading the code to your ESP32 change the following lines:
 For NOTIFICATION_EMAIL and USER_EMAIL you can use the gmail you created on step 5. Please send an email to innomedupgrc@gmail.com to request an API_KEY and a FIREBASE_PROJECT_ID
 
 #define NOTIFICATION_EMAIL "YourEmail@gmail.com"
@@ -66,21 +74,39 @@ For NOTIFICATION_EMAIL and USER_EMAIL you can use the gmail you created on step 
 
 #define FIREBASE_PROJECT_ID "askForProjectID"
 
-Step 7. Upload to your ESP32
+float loadCellCalibration=21.4;
 
-Step 8. Everytime the ESP32 is powered on it should display on the OLED its MAC address. Please note it
+int zeroFactor=491461;
 
-Step 9. If you havent set up the ESP32 it should automatically create a wifi network named INNOMED-UP. The password is upcycle!
+
+
+Step 9. Upload to your ESP32
+
+Step 10. Everytime the ESP32 is powered on it should display on the OLED its MAC address. Please note it
+
+Step 11. If you havent set up the ESP32 it should automatically create a wifi network named INNOMED-UP. The password is upcycle!
 Use a smartphone or a computer to connect to the network, open a browser and type the address 192.168.4.1. The following page should be displayed.
 
 <img src="https://user-images.githubusercontent.com/37118897/153802616-93ade98d-1aa2-4c42-b077-749abd6f4c40.jpg" width="200">
 
+SSID and password are the specs of the WiFi you want the ESP32 to connect to.
+Check interval: The time (in minutes) between checking if the bin is Full. Longer time intervals consume less energy.
+
+Status interval: The device will upload some data and declare its presence in the time (in minutes) specified here. Longer time intervals consume less energy. 
+
+Country GMT: Your local Greenwich Mean Time
+
+Sleep on Low Battery: Use only for PCB and MINI PCB versions.
+Set to 1 if you want your device to enter low power mode if the battery is at a critical level. This helps extend the life of your battery.
+
+debug: use only to troubleshoot a device. Requires connection with a computer. 
+
 After settiing it up the device will restart. If you want to repeat the setup hold the button connected on pin 26 for 5 seconds.
 This will delete all saved settings including the network SSID and pass. 
 
-Step 10. If everything is setup correctly your ESP should upload its data on Firebase.
+Step 12. If everything is setup correctly your ESP32 should upload its data on Firebase.
 It is possible to send a notification email to the manager of the bin.
-To do so please send an email to innomedupgrc@gmail.com with the MAC of the ESP and the recipient email.
+To do so please send an email to innomedupgrc@gmail.com with the MAC of the ESP32 and the recipient email.
 
 ie 84:CC:A8:5C:C7:04 recipientemail@gmail.com.
 
