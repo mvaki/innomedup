@@ -61,6 +61,7 @@ When you get really close send / or * to get as close as possible. When you are 
 ***Step 8.*** Open innomedup_release_v1_2_git.ino. Before uploading the code to your ESP32 change the following lines:
 For NOTIFICATION_EMAIL and USER_EMAIL you can use the gmail you created on step 5. Please send an email to innomedupgrc@gmail.com to request an API_KEY and a FIREBASE_PROJECT_ID
 For loadCellCalibration and zeroFactor follow the instructions on ***Step 7***
+
 #define NOTIFICATION_EMAIL "YourEmail@gmail.com"
 
 #define NOTIFICATION_PASSWORD "yourPassword"
