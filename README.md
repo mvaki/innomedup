@@ -51,9 +51,10 @@ When you create the email go to https://myaccount.google.com/lesssecureapps?pli=
 ***Step 6.*** Before uploading any sketch upload a simple sketch like Blink located in File->examples->01.Basics to make sure you have selected the right version of ESP32.
 When you upload Blink you should see an LED light flashing on your ESP32 Board.
 
-***Step 7.*** This includes that you have set up your bin's scale if there is one. You need to calibrate the scale and find the loadCellCalibration and zeroFactor values.
+***Step 7.*** This requires that you have set up your bin's scale if there is one. You need to calibrate the scale and find the loadCellCalibration and zeroFactor values.
 To do so, make sure the scale is connected to the ESP32. Upload HX711calibration.ino and open the serial monitor on ArduinoIDE (press ctrl+shift+M).
-On the monitor set Serial Speed to 115200. Now put a known weight on the scale that is above 1Kg and use the serial monitor to send + or - until the measured weight is close to the real value.
+On the monitor set Serial Speed to 115200. When you start the program make sure there is no weight on the scale to measure the the zeroFactor (tare).\
+Now put a known weight on the scale that is above 1Kg and use the serial monitor to send + or - until the measured weight is close to the real value.
 When you get really close send / or * to get as close as possible. When you are done send =. Save the values for loadCellCalibration and zeroFactor as you will need them in the next step.
 
  
