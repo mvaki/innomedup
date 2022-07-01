@@ -46,20 +46,26 @@ The program has been tested with the versions mentioned above. Please install th
 
 ***Step 5.*** Create a gmail account and change security settings so that esp can send emails.
 For Greece the email is innomedupgrc@gmail.com
-When you create the email go to https://myaccount.google.com/lesssecureapps?pli=1 and allow less secure apps access 
+When you create the email go to follow the instructions in this link to get an app (https://randomnerdtutorials.com/esp32-send-email-smtp-server-arduino-ide/) password.
+Use this password for NOTIFICATION_PASSWORD and if you want for USER_PASSWORD too (this can be different)
 
 ***Step 6.*** Before uploading any sketch upload a simple sketch like Blink located in File->examples->01.Basics to make sure you have selected the right version of ESP32.
 When you upload Blink you should see an LED light flashing on your ESP32 Board.
 
-***Step 7.*** This requires that you have set up your bin's scale if there is one. You need to calibrate the scale and find the loadCellCalibration and zeroFactor values.
-To do so, make sure the scale is connected to the ESP32. Upload HX711calibration.ino and open the serial monitor on ArduinoIDE (press ctrl+shift+M).
+***Step 7.*** This requires that you have set up your bin's scale if there is one. If there is no scale please set #define scalePresent false in the code for your bin version. You need to calibrate the scale and find the loadCellCalibration and zeroFactor values.
+To do so, use one of the following options:
+1) Make sure the scale is connected to the ESP32. Upload HX711calibration.ino and open the serial monitor on ArduinoIDE (press ctrl+shift+M).
 On the monitor set Serial Speed to 115200. When you start the program make sure there is no weight on the scale to measure the the zeroFactor (tare).\
 Now put a known weight on the scale that is above 1Kg and use the serial monitor to send + or - until the measured weight is close to the real value.
 When you get really close send / or * to get as close as possible. When you are done send =. Save the values for loadCellCalibration and zeroFactor as you will need them in the next step.
-
+2) (Only for PCB version) Finish all the steps and when you turn on the power to the system have the scale button pressed for some time. You should see on your display instructions to calibrate the scale.
+First remove the weight from the scale (not the wooden plates or whatever will be placed there permenantly) and press the button again.
+Then place a known weight and when you are ready to start press a button. 
+A weight measurement should appear on the display as well as the calibration factor. Use the buttons to change the factor until the weight that appears matches the actual weight of the object you placed. 
+When done press both buttons at the same time to exit. 
  
-***Step 8.*** Open innomedup_release_v1_2_git.ino. Before uploading the code to your ESP32 change the following lines:
-For NOTIFICATION_EMAIL and USER_EMAIL you can use the gmail you created on step 5. Please send an email to innomedupgrc@gmail.com to request an API_KEY and a FIREBASE_PROJECT_ID
+***Step 8.*** Open innomedup_release_v1_4_git.ino. Before uploading the code to your ESP32 change the following lines:
+For NOTIFICATION_EMAIL and USER_EMAIL you can use the gmail you created on step 5. Please send an email to innomedupgrc@gmail.com to request an API_KEY and a FIREBASE_PROJECT_ID and mention the email/password you would like to use to access firebase. This does not have to be the same as the NOTIFICATION_EMAIL/NOTIFICATION_PASSWORD.
 For loadCellCalibration and zeroFactor follow the instructions on ***Step 7***
 
 #define NOTIFICATION_EMAIL "YourEmail@gmail.com"
