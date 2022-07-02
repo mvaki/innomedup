@@ -46,7 +46,7 @@ The program has been tested with the versions mentioned above. Please install th
 
 ***Step 5.*** Create a gmail account and change security settings so that esp can send emails.
 For Greece the email is innomedupgrc@gmail.com
-When you create the email go to follow the instructions in this link to get an app (https://randomnerdtutorials.com/esp32-send-email-smtp-server-arduino-ide/) password.
+When you create the email go to follow the instructions in this link (https://randomnerdtutorials.com/esp32-send-email-smtp-server-arduino-ide/) to get an app password.
 Use this password for NOTIFICATION_PASSWORD and if you want for USER_PASSWORD too (this can be different)
 
 ***Step 6.*** Before uploading any sketch upload a simple sketch like Blink located in File->examples->01.Basics to make sure you have selected the right version of ESP32.
