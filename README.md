@@ -65,7 +65,7 @@ A weight measurement should appear on the display as well as the calibration fac
 When done press both buttons at the same time to exit. 
  
 ***Step 8.*** Open innomedup_release_v1_4_git.ino. Before uploading the code to your ESP32 change the following lines:
-(For version V1.4 only!) For NOTIFICATION_EMAIL and USER_EMAIL you can use the gmail you created on step 5. Please send an email to innomedupgrc@gmail.com to request an API_KEY and a FIREBASE_PROJECT_ID and mention the email/password you would like to use to access firebase. This does not have to be the same as the NOTIFICATION_EMAIL/NOTIFICATION_PASSWORD.
+For NOTIFICATION_EMAIL and USER_EMAIL you can use the gmail you created on step 5. Please send an email to innomedupgrc@gmail.com to request an API_KEY and a FIREBASE_PROJECT_ID and mention the email/password you would like to use to access firebase (For version V1.4 only!) . This does not have to be the same as the NOTIFICATION_EMAIL/NOTIFICATION_PASSWORD.
 
 For loadCellCalibration and zeroFactor follow the instructions on ***Step 7***
 
