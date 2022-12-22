@@ -35,16 +35,16 @@ On Arduino go to Sketch->Include Library->Manage Libraries
 
 Download HX711 Arduino Library by Bogdan Necula, Andreas Motl (0.7.4)
 
-Download Firebase Arduino Client Library for Espressif ESP8266 and ESP32 by Mobizt (2.8.3)
+(For version V1.4 only!) Download Firebase Arduino Client Library for Espressif ESP8266 and ESP32 by Mobizt (2.8.3)
 
-Download ESP Mail Client by Mobizt (1.6.4)
+(For version V1.4 only!) Download ESP Mail Client by Mobizt (1.6.4)
 
 Download ESP8266 and ESP32 OLED driver for SSD1306 displays by ThingPulse,Weinberg (4.2.1)
 
 
 The program has been tested with the versions mentioned above. Please install these versions. 
 
-***Step 5.*** Create a gmail account and change security settings so that esp can send emails.
+***Step 5.*** (For version V1.4 only!)  Create a gmail account and change security settings so that esp can send emails.
 For Greece the email is innomedupgrc@gmail.com
 When you create the email go to follow the instructions in this link (https://randomnerdtutorials.com/esp32-send-email-smtp-server-arduino-ide/) to get an app password.
 Use this password for NOTIFICATION_PASSWORD and if you want for USER_PASSWORD too (this can be different)
@@ -65,22 +65,23 @@ A weight measurement should appear on the display as well as the calibration fac
 When done press both buttons at the same time to exit. 
  
 ***Step 8.*** Open innomedup_release_v1_4_git.ino. Before uploading the code to your ESP32 change the following lines:
-For NOTIFICATION_EMAIL and USER_EMAIL you can use the gmail you created on step 5. Please send an email to innomedupgrc@gmail.com to request an API_KEY and a FIREBASE_PROJECT_ID and mention the email/password you would like to use to access firebase. This does not have to be the same as the NOTIFICATION_EMAIL/NOTIFICATION_PASSWORD.
+(For version V1.4 only!) For NOTIFICATION_EMAIL and USER_EMAIL you can use the gmail you created on step 5. Please send an email to innomedupgrc@gmail.com to request an API_KEY and a FIREBASE_PROJECT_ID and mention the email/password you would like to use to access firebase. This does not have to be the same as the NOTIFICATION_EMAIL/NOTIFICATION_PASSWORD.
+
 For loadCellCalibration and zeroFactor follow the instructions on ***Step 7***
 
-#define NOTIFICATION_EMAIL "YourEmail@gmail.com"
+(For version V1.4 only!) #define NOTIFICATION_EMAIL "YourEmail@gmail.com"
 
-#define NOTIFICATION_PASSWORD "yourPassword"
+(For version V1.4 only!) #define NOTIFICATION_PASSWORD "yourPassword"
 
-#define USER_EMAIL "YourEmail@gmail.com"
+(For version V1.4 only!) #define USER_EMAIL "YourEmail@gmail.com"
 
-#define USER_PASSWORD "yourPassword"
+(For version V1.4 only!) #define USER_PASSWORD "yourPassword"
 
-#define SENDER_NAME "InnomedUP"
+(For version V1.4 only!) #define SENDER_NAME "InnomedUP"
 
-#define API_KEY  "askForAPI"
+(For version V1.4 only!) #define API_KEY  "askForAPI"
 
-#define FIREBASE_PROJECT_ID "askForProjectID"
+(For version V1.4 only!) #define FIREBASE_PROJECT_ID "askForProjectID"
 
 float loadCellCalibration=21.4;
 
@@ -112,9 +113,9 @@ debug: use only to troubleshoot a device. Requires connection with a computer.
 After settiing it up the device will restart. If you want to repeat the setup hold the button connected on pin 26 for 5 seconds.
 This will delete all saved settings including the network SSID and pass. 
 
-***Step 12.*** If everything is setup correctly your ESP32 should upload its data on Firebase.
+***Step 12.*** If everything is setup correctly your ESP32 should upload its data on Firebase (v1.4) or on the inomed up website (v1.5).
 It is possible to send a notification email to the manager of the bin.
-To do so please send an email to innomedupgrc@gmail.com with the MAC of the ESP32 and the recipient email.
+(For version V1.4 only!) To do so please send an email to innomedupgrc@gmail.com with the MAC of the ESP32 and the recipient email.
 
 ie 84:CC:A8:5C:C7:04 recipientemail@gmail.com.
 
