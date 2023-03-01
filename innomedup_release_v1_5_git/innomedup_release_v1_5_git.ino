@@ -40,7 +40,7 @@ WebServer server(80);
 
 #include "WiFiManager.h"
 
-#define BIN_VERSION 1 //0 NO_PCB, 1 PCB,2 MINI_PCB
+#define BIN_VERSION 0 //0 NO_PCB, 1 PCB,2 MINI_PCB
 #ifndef LED_BUILTIN
 #define LED_BUILTIN 2 // pin number is specific to your esp32 board
 #endif 
