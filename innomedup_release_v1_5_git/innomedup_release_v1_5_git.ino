@@ -170,11 +170,11 @@ void setup()
 {
   if(hardReset && esp_reset_reason()!=ESP_RST_SW) newCredentials=false; //when the system is hardReset check if we have newCredentials
   /********************ESP initialize********************/
-  pinMode(BUILTIN_LED,OUTPUT);
-  digitalWrite(BUILTIN_LED,HIGH);
+  pinMode(LED_BUILTIN,OUTPUT);
+  digitalWrite(LED_BUILTIN,HIGH);
   delay(1000); //wait for everything to settle 
   Serial.begin(SerialBaud);
-  digitalWrite(BUILTIN_LED,LOW);
+  digitalWrite(LED_BUILTIN,LOW);
   /********************BatteryMeasurement********************/
   #if (BIN_VERSION==1 || BIN_VERSION==2)
     pinMode(batteryMeasurementControlPin,OUTPUT);
@@ -299,7 +299,7 @@ void setup()
 }
 
 void loop(){
-  #if scalePresent
+  #if scalePresent && BIN_VERSION==1
     if(!digitalRead(scaleButton)){ //if scale button is pressed for 1 seconds or more enter calibration
       unsigned long timenow=millis();
       delay(1000);
