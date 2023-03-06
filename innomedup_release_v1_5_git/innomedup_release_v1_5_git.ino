@@ -299,7 +299,7 @@ void setup()
 }
 
 void loop(){
-  #if scalePresent && BIN_VERSION==1
+  #if (scalePresent && BIN_VERSION==1)
     if(!digitalRead(scaleButton)){ //if scale button is pressed for 1 seconds or more enter calibration
       unsigned long timenow=millis();
       delay(1000);
