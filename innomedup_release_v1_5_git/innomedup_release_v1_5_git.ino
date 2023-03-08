@@ -84,9 +84,9 @@ String macString;
 #if BIN_VERSION == 0 //NO PCB
   #define scalePresent true
   HX711 scale;
-  float loadCellCalibration=21.4; //Upload HX711calibration.ino to find loadCellCalibration and zeroFactor 
+  float loadCellCalibration=23.4; //Upload HX711calibration.ino to find loadCellCalibration and zeroFactor 
   //int zeroFactor=660228; //removes the need to tare
-  int loadCellCalibrationInt=214;
+  int loadCellCalibrationInt=234;
   int zeroFactor=491461; //removes the need to tare
   float weight=0;
   int scaleCalibrated;
@@ -95,7 +95,7 @@ String macString;
   HX711 scale;
   float loadCellCalibration=21.4; //Upload HX711calibration.ino to find loadCellCalibration and zeroFactor 
   int loadCellCalibrationInt=214;
-  int zeroFactor=491461; //removes the need to tare
+  int zeroFactor=243825; //removes the need to tare
   float weight=0;
 #elif BIN_VERSION == 2 //MINI PCB
   #define scalePresent false
@@ -221,7 +221,7 @@ void setup()
     EEPROM.get(300+6*sizeof(int),weightThreshold);
     EEPROM.get(300+7*sizeof(int),binID);
     EEPROM.get(300+8*sizeof(int),displayClock);
-    #if scalePresent
+    #if scalePresent && BIN_VERSION != 0
       EEPROM.get(300+9*sizeof(int),zeroFactor);
       EEPROM.get(300+10*sizeof(int),loadCellCalibrationInt);
       loadCellCalibration=float(loadCellCalibrationInt/10.0);
