@@ -87,7 +87,7 @@ String macString;
   float loadCellCalibration=23.4; //Upload HX711calibration.ino to find loadCellCalibration and zeroFactor 
   //int zeroFactor=660228; //removes the need to tare
   int loadCellCalibrationInt=234;
-  int zeroFactor=491461; //removes the need to tare
+  int zeroFactor=243825; //removes the need to tare
   float weight=0;
   int scaleCalibrated;
 #elif BIN_VERSION == 1 //PCB
