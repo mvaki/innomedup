@@ -180,7 +180,7 @@ void setup()
     pinMode(batteryMeasurementControlPin,OUTPUT);
   #endif
   
-  #if(oledPresent&&BIN_VERSION==2) //only minipcb has oledpower pin
+  #if(oledPresent&&(BIN_VERSION==0||BIN_VERSION==2)) //minipcb and no_pcb verison have oledpower pin
     pinMode(OLED_POWER,OUTPUT);
   #endif
   if(batteryMeasurement) {
@@ -251,6 +251,7 @@ void setup()
       Serial.println("zeroFactor:"+String(zeroFactor));
       Serial.println("loadCellCalibration:"+String(loadCellCalibration));
       Serial.println("binID:"+String(binID));
+      Serial.println("displayClock:" + String(displayClock));
     }   
   }
   
@@ -274,8 +275,9 @@ void setup()
 //    Serial.println("INPUT PULLUP");
   #else //PCB and MINIPCB version have external pullups
     pinMode(WiFiButton,INPUT);
+    pinMode(scaleButton,INPUT);
   #endif
-  pinMode(scaleButton,INPUT);
+  
 
   /**************************Time*************************/
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
@@ -739,7 +741,7 @@ void displayDebugMessage(String message, int posx, int posy, bool addMessage, in
     display.drawString(posx,posy,message);
   }
   else{
-    #if BIN_VERSION==2
+    #if BIN_VERSION==2 || BIN_VERSION==0
       digitalWrite(OLED_POWER,HIGH);
     #endif
     delay(100);
@@ -751,7 +753,7 @@ void displayDebugMessage(String message, int posx, int posy, bool addMessage, in
   delay(offTime);
   if(turnOffAfterwards){
     display.displayOff();
-    #if BIN_VERSION==2
+    #if BIN_VERSION==2 || BIN_VERSION==0
     digitalWrite(OLED_POWER,LOW);
     #endif
   }
